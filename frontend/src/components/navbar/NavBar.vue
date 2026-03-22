@@ -1,21 +1,20 @@
-<script setup lang="ts">
+<script setup>
 
-import MenuIcon from "@/components/nvabar/icons/MenuIcon.vue";
-import HomepageIcon from "@/components/nvabar/icons/HomepageIcon.vue";
-import FriendIcon from "@/components/nvabar/icons/FriendIcon.vue";
-import CreateIcon from "@/components/nvabar/icons/CreateIcon.vue";
-import SearchIcon from "@/components/nvabar/icons/SearchIcon.vue";
+import MenuIcon from "@/components/navbar/icons/MenuIcon.vue";
+import HomepageIcon from "@/components/navbar/icons/HomepageIcon.vue";
+import FriendIcon from "@/components/navbar/icons/FriendIcon.vue";
+import CreateIcon from "@/components/navbar/icons/CreateIcon.vue";
+import SearchIcon from "@/components/navbar/icons/SearchIcon.vue";
 </script>
 
 <template>
-   <div class="drawer lg:drawer-open">
+  <div class="drawer lg:drawer-open">
     <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-      <!-- Navbar -->
       <nav class="navbar w-full bg-base-100 shadow-sm">
         <div class="navbar-start">
           <label for="my-drawer-4" aria-label="open sidebar" class="btn btn-square btn-ghost">
-           <MenuIcon />
+            <MenuIcon />
           </label>
           <div class="px-2 font-bold text-xl">AIFriends</div>
         </div>
@@ -23,17 +22,16 @@ import SearchIcon from "@/components/nvabar/icons/SearchIcon.vue";
           <div class="join w-4/5">
             <input class="input join-item rounded-l-full w-4/5" placeholder="搜索你感兴趣的内容" />
             <button class="btn join-item rounded-r-full gap-0">
-              <SearchIcon /> 搜索
+              <SearchIcon />
+              搜索
             </button>
           </div>
         </div>
         <div class="navbar-end">
           <button class="btn btn-ghost text-lg">登录</button>
         </div>
-
       </nav>
-      <!-- Page content here -->
-      <div class="p-4">Page Content</div>
+      <slot></slot>
     </div>
 
     <div class="drawer-side is-drawer-close:overflow-visible">
