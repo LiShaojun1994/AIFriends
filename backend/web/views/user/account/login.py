@@ -7,8 +7,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from web.models.user import UserProfile
 
 
-class LoginView(APIView):
-    def post(self, request):
+class   LoginView(APIView):
+    def post(self, request, *args, **kwargs):
         try:
             username = request.data.get('username').strip()
             password = request.data.get('password').strip()
@@ -16,8 +16,8 @@ class LoginView(APIView):
                 return Response({'result': '用户名和密码不能为空'})
             user = authenticate(username=username, password=password)
             if user: #用户名密码正确
-                user_profile = UserProfile.objects.get(username=username)
-                refresh = RefreshToken.for_user(user_profile) #生成JWT
+                user_profile = UserProfile.objects.get(user=user)
+                refresh = RefreshToken.for_user(user) #生成JWT
                 response = Response({
                     'result': 'success',
                     'access': str(refresh.access_token),
