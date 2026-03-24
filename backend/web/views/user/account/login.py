@@ -7,7 +7,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from web.models.user import UserProfile
 
 
-class   LoginView(APIView):
+class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         try:
             username = request.data.get('username').strip()

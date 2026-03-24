@@ -37,7 +37,6 @@ async function handleRegister(){
         errMessage.value = data.result
       }
     } catch (err){
-      console.log(err)
     }
   }
 }
