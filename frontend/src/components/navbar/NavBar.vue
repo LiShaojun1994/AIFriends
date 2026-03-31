@@ -1,4 +1,4 @@
-<script setup>
+ <script setup>
 
 import MenuIcon from "@/components/navbar/icons/MenuIcon.vue";
 import HomepageIcon from "@/components/navbar/icons/HomepageIcon.vue";
@@ -31,7 +31,7 @@ const user = useUserStore()
           </div>
         </div>
         <div class="navbar-end">
-          <RouterLink v-if="user.isLogin()" :to="{name:'update-character',params:{character_id: 1}}" class="btn btn-ghost text-base mr-6">
+          <RouterLink v-if="user.isLogin()" :to="{name:'create-index'}" class="btn btn-ghost text-base mr-6">
             <CreateIcon />
               创作
           </RouterLink>
